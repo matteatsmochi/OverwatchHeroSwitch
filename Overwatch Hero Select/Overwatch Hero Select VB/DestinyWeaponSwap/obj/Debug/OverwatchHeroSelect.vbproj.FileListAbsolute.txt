@@ -12,3 +12,7 @@ C:\Users\Matthew\Documents\Visual Studio 2015\Projects\Overwatch Hero Select\Des
 C:\Users\Matthew\Documents\Visual Studio 2015\Projects\Overwatch Hero Select\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.FrmOverwatchHeroSelect.resources
 C:\Users\Matthew\Documents\Visual Studio 2015\Projects\Overwatch Hero Select\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.FrmOverwatchHeroSelect.en.resources
 C:\Users\Matthew\Documents\Visual Studio 2015\Projects\Overwatch Hero Select\DestinyWeaponSwap\obj\Debug\en\DestinyWeaponSwap.resources.dll
+C:\Users\colin\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\bin\Debug\DestinyWeaponSwap.exe.config
+C:\Users\colin\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.exe
+C:\Users\colin\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.xml
+C:\Users\colin\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.pdb

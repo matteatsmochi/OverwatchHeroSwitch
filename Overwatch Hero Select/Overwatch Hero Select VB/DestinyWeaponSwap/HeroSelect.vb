@@ -135,200 +135,203 @@ Start:
             GoTo Start
         End If
 
-        If txtRandomHero1.Text = 1 Then
-            picWeapon1.Image = pic76.Image
-            lblWeaponName1.Text = "Soldier 76"
-        ElseIf txtRandomHero1.Text = 2 Then
-            picWeapon1.Image = picBastion.Image
-            lblWeaponName1.Text = "Bastion"
-        ElseIf txtRandomHero1.Text = 3 Then
-            picWeapon1.Image = picDVa.Image
-            lblWeaponName1.Text = "D.Va"
-        ElseIf txtRandomHero1.Text = 4 Then
-            picWeapon1.Image = picGenji.Image
-            lblWeaponName1.Text = "Genji"
-        ElseIf txtRandomHero1.Text = 5 Then
-            picWeapon1.Image = picHanzo.Image
-            lblWeaponName1.Text = "Hanzo"
-        ElseIf txtRandomHero1.Text = 6 Then
-            picWeapon1.Image = picJunkrat.Image
-            lblWeaponName1.Text = "Junkrat"
-        ElseIf txtRandomHero1.Text = 7 Then
-            picWeapon1.Image = picLucio.Image
-            lblWeaponName1.Text = "Lucio"
-        ElseIf txtRandomHero1.Text = 8 Then
-            picWeapon1.Image = picMcCree.Image
-            lblWeaponName1.Text = "McCree"
-        ElseIf txtRandomHero1.Text = 9 Then
-            picWeapon1.Image = picMei.Image
-            lblWeaponName1.Text = "Mei"
-        ElseIf txtRandomHero1.Text = 10 Then
-            picWeapon1.Image = picMercy.Image
-            lblWeaponName1.Text = "Mercy"
-        ElseIf txtRandomHero1.Text = 11 Then
-            picWeapon1.Image = picPharah.Image
-            lblWeaponName1.Text = "Pharah"
-        ElseIf txtRandomHero1.Text = 12 Then
-            picWeapon1.Image = picReaper.Image
-            lblWeaponName1.Text = "Reaper"
-        ElseIf txtRandomHero1.Text = 13 Then
-            picWeapon1.Image = picReinhardt.Image
-            lblWeaponName1.Text = "Reinhardt"
-        ElseIf txtRandomHero1.Text = 14 Then
-            picWeapon1.Image = picRoadhog.Image
-            lblWeaponName1.Text = "Roadhog"
-        ElseIf txtRandomHero1.Text = 15 Then
-            picWeapon1.Image = picSymmetra.Image
-            lblWeaponName1.Text = "Symmetra"
-        ElseIf txtRandomHero1.Text = 16 Then
-            picWeapon1.Image = picTorbjorn.Image
-            lblWeaponName1.Text = "Torbjorn"
-        ElseIf txtRandomHero1.Text = 17 Then
-            picWeapon1.Image = picTracer.Image
-            lblWeaponName1.Text = "Tracer"
-        ElseIf txtRandomHero1.Text = 18 Then
-            picWeapon1.Image = picWidowmaker.Image
-            lblWeaponName1.Text = "Widowmakr"
-        ElseIf txtRandomHero1.Text = 19 Then
-            picWeapon1.Image = picWinston.Image
-            lblWeaponName1.Text = "Winston"
-        ElseIf txtRandomHero1.Text = 20 Then
-            picWeapon1.Image = picZarya.Image
-            lblWeaponName1.Text = "Zarya"
-        ElseIf txtRandomHero1.Text = 21 Then
-            picWeapon1.Image = picZenyatta.Image
-            lblWeaponName1.Text = "Zenyatta"
-        End If
+        Select Case txtRandomHero1.Text
+            Case 1
+                picWeapon1.Image = pic76.Image
+                lblWeaponName1.Text = "Soldier 76"
+            Case 2
+                picWeapon1.Image = picBastion.Image
+                lblWeaponName1.Text = "Bastion"
+            Case 3
+                picWeapon1.Image = picDVa.Image
+                lblWeaponName1.Text = "D.Va"
+            Case 4
+                picWeapon1.Image = picGenji.Image
+                lblWeaponName1.Text = "Genji"
+            Case 5
+                picWeapon1.Image = picHanzo.Image
+                lblWeaponName1.Text = "Hanzo"
+            Case 6
+                picWeapon1.Image = picJunkrat.Image
+                lblWeaponName1.Text = "Junkrat"
+            Case 7
+                picWeapon1.Image = picLucio.Image
+                lblWeaponName1.Text = "Lucio"
+            Case 8
+                picWeapon1.Image = picMcCree.Image
+                lblWeaponName1.Text = "McCree"
+            Case 9
+                picWeapon1.Image = picMei.Image
+                lblWeaponName1.Text = "Mei"
+            Case 10
+                picWeapon1.Image = picMercy.Image
+                lblWeaponName1.Text = "Mercy"
+            Case 11
+                picWeapon1.Image = picPharah.Image
+                lblWeaponName1.Text = "Pharah"
+            Case 12
+                picWeapon1.Image = picReaper.Image
+                lblWeaponName1.Text = "Reaper"
+            Case 13
+                picWeapon1.Image = picReinhardt.Image
+                lblWeaponName1.Text = "Reinhardt"
+            Case 14
+                picWeapon1.Image = picRoadhog.Image
+                lblWeaponName1.Text = "Roadhog"
+            Case 15
+                picWeapon1.Image = picSymmetra.Image
+                lblWeaponName1.Text = "Symmetra"
+            Case 16
+                picWeapon1.Image = picTorbjorn.Image
+                lblWeaponName1.Text = "Torbjorn"
+            Case 17
+                picWeapon1.Image = picTracer.Image
+                lblWeaponName1.Text = "Tracer"
+            Case 18
+                picWeapon1.Image = picWidowmaker.Image
+                lblWeaponName1.Text = "Widowmakr"
+            Case 19
+                picWeapon1.Image = picWinston.Image
+                lblWeaponName1.Text = "Winston"
+            Case 20
+                picWeapon1.Image = picZarya.Image
+                lblWeaponName1.Text = "Zarya"
+            Case 21
+                picWeapon1.Image = picZenyatta.Image
+                lblWeaponName1.Text = "Zenyatta"
+        End Select
 
-        If txtRandomHero2.Text = 1 Then
-            picWeapon2.Image = pic76.Image
-            lblWeaponName2.Text = "Soldier 76"
-        ElseIf txtRandomHero2.Text = 2 Then
-            picWeapon2.Image = picBastion.Image
-            lblWeaponName2.Text = "Bastion"
-        ElseIf txtRandomHero2.Text = 3 Then
-            picWeapon2.Image = picDVa.Image
-            lblWeaponName2.Text = "D.Va"
-        ElseIf txtRandomHero2.Text = 4 Then
-            picWeapon2.Image = picGenji.Image
-            lblWeaponName2.Text = "Genji"
-        ElseIf txtRandomHero2.Text = 5 Then
-            picWeapon2.Image = picHanzo.Image
-            lblWeaponName2.Text = "Hanzo"
-        ElseIf txtRandomHero2.Text = 6 Then
-            picWeapon2.Image = picJunkrat.Image
-            lblWeaponName2.Text = "Junkrat"
-        ElseIf txtRandomHero2.Text = 7 Then
-            picWeapon2.Image = picLucio.Image
-            lblWeaponName2.Text = "Lucio"
-        ElseIf txtRandomHero2.Text = 8 Then
-            picWeapon2.Image = picMcCree.Image
-            lblWeaponName2.Text = "McCree"
-        ElseIf txtRandomHero2.Text = 9 Then
-            picWeapon2.Image = picMei.Image
-            lblWeaponName2.Text = "Mei"
-        ElseIf txtRandomHero2.Text = 10 Then
-            picWeapon2.Image = picMercy.Image
-            lblWeaponName2.Text = "Mercy"
-        ElseIf txtRandomHero2.Text = 11 Then
-            picWeapon2.Image = picPharah.Image
-            lblWeaponName2.Text = "Pharah"
-        ElseIf txtRandomHero2.Text = 12 Then
-            picWeapon2.Image = picReaper.Image
-            lblWeaponName2.Text = "Reaper"
-        ElseIf txtRandomHero2.Text = 13 Then
-            picWeapon2.Image = picReinhardt.Image
-            lblWeaponName2.Text = "Reinhardt"
-        ElseIf txtRandomHero2.Text = 14 Then
-            picWeapon2.Image = picRoadhog.Image
-            lblWeaponName2.Text = "Roadhog"
-        ElseIf txtRandomHero2.Text = 15 Then
-            picWeapon2.Image = picSymmetra.Image
-            lblWeaponName2.Text = "Symmetra"
-        ElseIf txtRandomHero2.Text = 16 Then
-            picWeapon2.Image = picTorbjorn.Image
-            lblWeaponName2.Text = "Torbjorn"
-        ElseIf txtRandomHero2.Text = 17 Then
-            picWeapon2.Image = picTracer.Image
-            lblWeaponName2.Text = "Tracer"
-        ElseIf txtRandomHero2.Text = 18 Then
-            picWeapon2.Image = picWidowmaker.Image
-            lblWeaponName2.Text = "Widowmakr"
-        ElseIf txtRandomHero2.Text = 19 Then
-            picWeapon2.Image = picWinston.Image
-            lblWeaponName2.Text = "Winston"
-        ElseIf txtRandomHero2.Text = 20 Then
-            picWeapon2.Image = picZarya.Image
-            lblWeaponName2.Text = "Zarya"
-        ElseIf txtRandomHero2.Text = 21 Then
-            picWeapon2.Image = picZenyatta.Image
-            lblWeaponName2.Text = "Zenyatta"
-        End If
+        Select Case txtRandomHero2.Text
+            Case 1
+                picWeapon2.Image = pic76.Image
+                lblWeaponName2.Text = "Soldier 76"
+            Case 2
+                picWeapon2.Image = picBastion.Image
+                lblWeaponName2.Text = "Bastion"
+            Case 3
+                picWeapon2.Image = picDVa.Image
+                lblWeaponName2.Text = "D.Va"
+            Case 4
+                picWeapon2.Image = picGenji.Image
+                lblWeaponName2.Text = "Genji"
+            Case 5
+                picWeapon2.Image = picHanzo.Image
+                lblWeaponName2.Text = "Hanzo"
+            Case 6
+                picWeapon2.Image = picJunkrat.Image
+                lblWeaponName2.Text = "Junkrat"
+            Case 7
+                picWeapon2.Image = picLucio.Image
+                lblWeaponName2.Text = "Lucio"
+            Case 8
+                picWeapon2.Image = picMcCree.Image
+                lblWeaponName2.Text = "McCree"
+            Case 9
+                picWeapon2.Image = picMei.Image
+                lblWeaponName2.Text = "Mei"
+            Case 10
+                picWeapon2.Image = picMercy.Image
+                lblWeaponName2.Text = "Mercy"
+            Case 11
+                picWeapon2.Image = picPharah.Image
+                lblWeaponName2.Text = "Pharah"
+            Case 12
+                picWeapon2.Image = picReaper.Image
+                lblWeaponName2.Text = "Reaper"
+            Case 13
+                picWeapon2.Image = picReinhardt.Image
+                lblWeaponName2.Text = "Reinhardt"
+            Case 14
+                picWeapon2.Image = picRoadhog.Image
+                lblWeaponName2.Text = "Roadhog"
+            Case 15
+                picWeapon2.Image = picSymmetra.Image
+                lblWeaponName2.Text = "Symmetra"
+            Case 16
+                picWeapon2.Image = picTorbjorn.Image
+                lblWeaponName2.Text = "Torbjorn"
+            Case 17
+                picWeapon2.Image = picTracer.Image
+                lblWeaponName2.Text = "Tracer"
+            Case 18
+                picWeapon2.Image = picWidowmaker.Image
+                lblWeaponName2.Text = "Widowmakr"
+            Case 19
+                picWeapon2.Image = picWinston.Image
+                lblWeaponName2.Text = "Winston"
+            Case 20
+                picWeapon2.Image = picZarya.Image
+                lblWeaponName2.Text = "Zarya"
+            Case 21
+                picWeapon2.Image = picZenyatta.Image
+                lblWeaponName2.Text = "Zenyatta"
+        End Select
 
-        If txtRandomHero3.Text = 1 Then
-            picWeapon3.Image = pic76.Image
-            lblWeaponName3.Text = "Soldier 76"
-        ElseIf txtRandomHero3.Text = 2 Then
-            picWeapon3.Image = picBastion.Image
-            lblWeaponName3.Text = "Bastion"
-        ElseIf txtRandomHero3.Text = 3 Then
-            picWeapon3.Image = picDVa.Image
-            lblWeaponName3.Text = "D.Va"
-        ElseIf txtRandomHero3.Text = 4 Then
-            picWeapon3.Image = picGenji.Image
-            lblWeaponName3.Text = "Genji"
-        ElseIf txtRandomHero3.Text = 5 Then
-            picWeapon3.Image = picHanzo.Image
-            lblWeaponName3.Text = "Hanzo"
-        ElseIf txtRandomHero3.Text = 6 Then
-            picWeapon3.Image = picJunkrat.Image
-            lblWeaponName3.Text = "Junkrat"
-        ElseIf txtRandomHero3.Text = 7 Then
-            picWeapon3.Image = picLucio.Image
-            lblWeaponName3.Text = "Lucio"
-        ElseIf txtRandomHero3.Text = 8 Then
-            picWeapon3.Image = picMcCree.Image
-            lblWeaponName3.Text = "McCree"
-        ElseIf txtRandomHero3.Text = 9 Then
-            picWeapon3.Image = picMei.Image
-            lblWeaponName3.Text = "Mei"
-        ElseIf txtRandomHero3.Text = 10 Then
-            picWeapon3.Image = picMercy.Image
-            lblWeaponName3.Text = "Mercy"
-        ElseIf txtRandomHero3.Text = 11 Then
-            picWeapon3.Image = picPharah.Image
-            lblWeaponName3.Text = "Pharah"
-        ElseIf txtRandomHero3.Text = 12 Then
-            picWeapon3.Image = picReaper.Image
-            lblWeaponName3.Text = "Reaper"
-        ElseIf txtRandomHero3.Text = 13 Then
-            picWeapon3.Image = picReinhardt.Image
-            lblWeaponName3.Text = "Reinhardt"
-        ElseIf txtRandomHero3.Text = 14 Then
-            picWeapon3.Image = picRoadhog.Image
-            lblWeaponName3.Text = "Roadhog"
-        ElseIf txtRandomHero3.Text = 15 Then
-            picWeapon3.Image = picSymmetra.Image
-            lblWeaponName3.Text = "Symmetra"
-        ElseIf txtRandomHero3.Text = 16 Then
-            picWeapon3.Image = picTorbjorn.Image
-            lblWeaponName3.Text = "Torbjorn"
-        ElseIf txtRandomHero3.Text = 17 Then
-            picWeapon3.Image = picTracer.Image
-            lblWeaponName3.Text = "Tracer"
-        ElseIf txtRandomHero3.Text = 18 Then
-            picWeapon3.Image = picWidowmaker.Image
-            lblWeaponName3.Text = "Widowmakr"
-        ElseIf txtRandomHero3.Text = 19 Then
-            picWeapon3.Image = picWinston.Image
-            lblWeaponName3.Text = "Winston"
-        ElseIf txtRandomHero3.Text = 20 Then
-            picWeapon3.Image = picZarya.Image
-            lblWeaponName3.Text = "Zarya"
-        ElseIf txtRandomHero3.Text = 21 Then
-            picWeapon3.Image = picZenyatta.Image
-            lblWeaponName3.Text = "Zenyatta"
-        End If
+        Select Case txtRandomHero3.Text
+            Case 1
+                picWeapon3.Image = pic76.Image
+                lblWeaponName3.Text = "Soldier 76"
+            Case 2
+                picWeapon3.Image = picBastion.Image
+                lblWeaponName3.Text = "Bastion"
+            Case 3
+                picWeapon3.Image = picDVa.Image
+                lblWeaponName3.Text = "D.Va"
+            Case 4
+                picWeapon3.Image = picGenji.Image
+                lblWeaponName3.Text = "Genji"
+            Case 5
+                picWeapon3.Image = picHanzo.Image
+                lblWeaponName3.Text = "Hanzo"
+            Case 6
+                picWeapon3.Image = picJunkrat.Image
+                lblWeaponName3.Text = "Junkrat"
+            Case 7
+                picWeapon3.Image = picLucio.Image
+                lblWeaponName3.Text = "Lucio"
+            Case 8
+                picWeapon3.Image = picMcCree.Image
+                lblWeaponName3.Text = "McCree"
+            Case 9
+                picWeapon3.Image = picMei.Image
+                lblWeaponName3.Text = "Mei"
+            Case 10
+                picWeapon3.Image = picMercy.Image
+                lblWeaponName3.Text = "Mercy"
+            Case 11
+                picWeapon3.Image = picPharah.Image
+                lblWeaponName3.Text = "Pharah"
+            Case 12
+                picWeapon3.Image = picReaper.Image
+                lblWeaponName3.Text = "Reaper"
+            Case 13
+                picWeapon3.Image = picReinhardt.Image
+                lblWeaponName3.Text = "Reinhardt"
+            Case 14
+                picWeapon3.Image = picRoadhog.Image
+                lblWeaponName3.Text = "Roadhog"
+            Case 15
+                picWeapon3.Image = picSymmetra.Image
+                lblWeaponName3.Text = "Symmetra"
+            Case 16
+                picWeapon3.Image = picTorbjorn.Image
+                lblWeaponName3.Text = "Torbjorn"
+            Case 17
+                picWeapon3.Image = picTracer.Image
+                lblWeaponName3.Text = "Tracer"
+            Case 18
+                picWeapon3.Image = picWidowmaker.Image
+                lblWeaponName3.Text = "Widowmakr"
+            Case 19
+                picWeapon3.Image = picWinston.Image
+                lblWeaponName3.Text = "Winston"
+            Case 20
+                picWeapon3.Image = picZarya.Image
+                lblWeaponName3.Text = "Zarya"
+            Case 21
+                picWeapon3.Image = picZenyatta.Image
+                lblWeaponName3.Text = "Zenyatta"
+        End Select
 
     End Sub
 
@@ -421,7 +424,6 @@ Start:
         txtReticleColor.Text = picReticleColor.BackColor.Name
 
 
-
         If txtReticleColor.Text = "ff00ff00" Then
             'alive
             If txtPlayerStatus.Text = "Alive" Then
@@ -465,7 +467,6 @@ Start:
         Dim hot20 As Boolean
         Dim hot21 As Boolean
 
-
         hot1 = GetAsyncKeyState(Keys.A)
         hot2 = GetAsyncKeyState(Keys.B)
         hot3 = GetAsyncKeyState(Keys.C)
@@ -487,8 +488,6 @@ Start:
         hot19 = GetAsyncKeyState(Keys.S)
         hot20 = GetAsyncKeyState(Keys.T)
         hot21 = GetAsyncKeyState(Keys.U)
-
-
 
         If hot1 = True Then
             If lblWeaponName1.Text = "Soldier76" Then
