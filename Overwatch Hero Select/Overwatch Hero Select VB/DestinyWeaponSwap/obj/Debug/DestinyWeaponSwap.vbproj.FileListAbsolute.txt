@@ -1,0 +1,15 @@
+c:\users\matthew\documents\visual studio 2015\Projects\DestinyWeaponSwap\DestinyWeaponSwap\bin\Debug\DestinyWeaponSwap.exe.config
+C:\Users\Matthew\Documents\Visual Studio 2015\Projects\DestinyWeaponSwap\DestinyWeaponSwap\bin\Debug\DestinyWeaponSwap.exe
+C:\Users\Matthew\Documents\Visual Studio 2015\Projects\DestinyWeaponSwap\DestinyWeaponSwap\bin\Debug\DestinyWeaponSwap.pdb
+C:\Users\Matthew\Documents\Visual Studio 2015\Projects\DestinyWeaponSwap\DestinyWeaponSwap\bin\Debug\DestinyWeaponSwap.xml
+C:\Users\Matthew\Documents\Visual Studio 2015\Projects\DestinyWeaponSwap\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.vbprojResolveAssemblyReference.cache
+C:\Users\Matthew\Documents\Visual Studio 2015\Projects\DestinyWeaponSwap\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.FrmDestinyWeaponSwap.resources
+C:\Users\Matthew\Documents\Visual Studio 2015\Projects\DestinyWeaponSwap\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.Resources.resources
+C:\Users\Matthew\Documents\Visual Studio 2015\Projects\DestinyWeaponSwap\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.vbproj.GenerateResource.Cache
+C:\Users\Matthew\Documents\Visual Studio 2015\Projects\DestinyWeaponSwap\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.exe
+C:\Users\Matthew\Documents\Visual Studio 2015\Projects\DestinyWeaponSwap\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.xml
+C:\Users\Matthew\Documents\Visual Studio 2015\Projects\DestinyWeaponSwap\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.pdb
+C:\Users\Matthew\Documents\Visual Studio 2015\Projects\Overwatch Hero Select\DestinyWeaponSwap\bin\Debug\DestinyWeaponSwap.exe.config
+C:\Users\Matthew\Documents\Visual Studio 2015\Projects\Overwatch Hero Select\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.exe
+C:\Users\Matthew\Documents\Visual Studio 2015\Projects\Overwatch Hero Select\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.xml
+C:\Users\Matthew\Documents\Visual Studio 2015\Projects\Overwatch Hero Select\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.pdb
