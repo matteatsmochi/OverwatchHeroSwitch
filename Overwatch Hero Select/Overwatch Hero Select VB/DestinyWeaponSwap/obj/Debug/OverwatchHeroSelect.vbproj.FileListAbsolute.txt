@@ -16,3 +16,17 @@ C:\Users\colin\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch 
 C:\Users\colin\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.exe
 C:\Users\colin\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.xml
 C:\Users\colin\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.pdb
+C:\Users\Matthew\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\bin\Debug\DestinyWeaponSwap.exe.config
+C:\Users\Matthew\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.exe
+C:\Users\Matthew\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.xml
+C:\Users\Matthew\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.pdb
+C:\Users\Matthew\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\bin\Debug\DestinyWeaponSwap.exe
+C:\Users\Matthew\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\bin\Debug\DestinyWeaponSwap.pdb
+C:\Users\Matthew\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\bin\Debug\DestinyWeaponSwap.xml
+C:\Users\Matthew\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\bin\Debug\en\DestinyWeaponSwap.resources.dll
+C:\Users\Matthew\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\obj\Debug\OverwatchHeroSelect.vbprojResolveAssemblyReference.cache
+C:\Users\Matthew\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.frmOverwatchHeroSelect.resources
+C:\Users\Matthew\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.Resources.resources
+C:\Users\Matthew\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\obj\Debug\DestinyWeaponSwap.frmOverwatchHeroSelect.en.resources
+C:\Users\Matthew\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\obj\Debug\OverwatchHeroSelect.vbproj.GenerateResource.Cache
+C:\Users\Matthew\Source\Repos\OverwatchHeroSwitch\Overwatch Hero Select\Overwatch Hero Select VB\DestinyWeaponSwap\obj\Debug\en\DestinyWeaponSwap.resources.dll

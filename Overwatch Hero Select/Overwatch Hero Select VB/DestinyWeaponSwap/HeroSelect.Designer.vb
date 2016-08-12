@@ -80,7 +80,6 @@ Partial Class frmOverwatchHeroSelect
         Me.tmrReticleCheck = New System.Windows.Forms.Timer(Me.components)
         Me.txtReticleColor = New System.Windows.Forms.TextBox()
         Me.picReticleColor = New System.Windows.Forms.PictureBox()
-        Me.tmrHotkey = New System.Windows.Forms.Timer(Me.components)
         Me.tmrDelayHeroSwitch = New System.Windows.Forms.Timer(Me.components)
         Me.txtPlayerStatus = New System.Windows.Forms.TextBox()
         Me.txtDelayHeroSwitch = New System.Windows.Forms.TextBox()
@@ -445,10 +444,6 @@ Partial Class frmOverwatchHeroSelect
         Me.picReticleColor.Name = "picReticleColor"
         Me.picReticleColor.TabStop = False
         '
-        'tmrHotkey
-        '
-        Me.tmrHotkey.Enabled = True
-        '
         'tmrDelayHeroSwitch
         '
         Me.tmrDelayHeroSwitch.Interval = 1000
@@ -627,7 +622,6 @@ Partial Class frmOverwatchHeroSelect
     Friend WithEvents tmrReticleCheck As Timer
     Friend WithEvents txtReticleColor As TextBox
     Friend WithEvents picReticleColor As PictureBox
-    Friend WithEvents tmrHotkey As Timer
     Friend WithEvents tmrDelayHeroSwitch As Timer
     Friend WithEvents txtPlayerStatus As TextBox
     Friend WithEvents txtDelayHeroSwitch As TextBox
