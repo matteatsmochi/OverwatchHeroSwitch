@@ -1,23 +1,24 @@
 ﻿Public Class frmOverwatchHeroSelect
-
+    'I believe this is to be able to perform key presses
     <System.Runtime.InteropServices.DllImport("user32.dll")>
     Private Shared Function GetAsyncKeyState(ByVal vkey As System.Windows.Forms.Keys) As Short
 
     End Function
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Loading the Form and putting all image boxes in the correct place
         cmdUpDown.Top = 14
         cmdUpDown.Left = 1197
         txtUpDown.Top = 42
         txtUpDown.Left = 1197
         picSwapPlate.Top = 0
         picSwapPlate.Left = 0
+        'cmdUpDown clicked to push the images into their standby mode
         cmdUpDown.PerformClick()
-
-
     End Sub
 
     Private Sub cmdVote1_Click(sender As Object, e As EventArgs) Handles cmdVote1.Click
+        'Chat sends a vote for Hero 1. Percentage bars adjust to reflect overall voting %
         txtVote1.Text = txtVote1.Text + 1
         txtTotalVotes.Text = txtTotalVotes.Text + 1
 
@@ -27,6 +28,7 @@
     End Sub
 
     Private Sub cmdVote2_Click(sender As Object, e As EventArgs) Handles cmdVote2.Click
+        'Chat sends a vote for Hero 2. Percentage bars adjust to reflect overall voting %
         txtVote2.Text = txtVote2.Text + 1
         txtTotalVotes.Text = txtTotalVotes.Text + 1
 
@@ -36,6 +38,7 @@
     End Sub
 
     Private Sub cmdVote3_Click(sender As Object, e As EventArgs) Handles cmdVote3.Click
+        'Chat sends a vote for Hero 3. Percentage bars adjust to reflect overall voting %
         txtVote3.Text = txtVote3.Text + 1
         txtTotalVotes.Text = txtTotalVotes.Text + 1
 
@@ -45,7 +48,10 @@
     End Sub
 
     Private Sub tmrUpDown_Tick(sender As Object, e As EventArgs) Handles tmrUpDown.Tick
+        'Moving Vote options up (when starting vote) or down (when vote is over)
+
         If cmdUpDown.Text = "Up" Then
+            'Reset everything for a blank vote
             cmdVote1.Enabled = True
             cmdVote2.Enabled = True
             cmdVote3.Enabled = True
@@ -54,56 +60,57 @@
             barVote3.Width = 0
 
             If txtUpDown.Text = 125 Then
-                'reset
+                'All items are at the top, do not move them anymore. Ready everything to be pushed down.
                 tmrUpDown.Enabled = False
                 txtUpDown.Text = "0"
                 cmdUpDown.Text = "Down"
             Else
-                'move everything down
-                picWeapon1.Top = picWeapon1.Top - 1
-                picWeapon2.Top = picWeapon2.Top - 1
-                picWeapon3.Top = picWeapon3.Top - 1
-                lblWeaponName1.Top = lblWeaponName1.Top - 1
-                lblWeaponName2.Top = lblWeaponName2.Top - 1
-                lblWeaponName3.Top = lblWeaponName3.Top - 1
+                'Move all items up by 1 pixel
+                picHero1.Top = picHero1.Top - 1
+                picHero2.Top = picHero2.Top - 1
+                picHero3.Top = picHero3.Top - 1
+                lblHeroName1.Top = lblHeroName1.Top - 1
+                lblHeroName2.Top = lblHeroName2.Top - 1
+                lblHeroName3.Top = lblHeroName3.Top - 1
                 barVote1.Top = barVote1.Top - 1
                 barVote2.Top = barVote2.Top - 1
                 barVote3.Top = barVote3.Top - 1
                 picSwapPlate.Top = picSwapPlate.Top - 1
-
+                'Mark the timer up by 1 (until it reaches 125)
                 txtUpDown.Text = txtUpDown.Text + 1
             End If
 
 
         ElseIf cmdUpDown.Text = "Down" Then
+            'Vote is over, voting is disabled
             cmdVote1.Enabled = False
             cmdVote2.Enabled = False
             cmdVote3.Enabled = False
 
             If txtUpDown.Text = 125 Then
-                'reset
+                'All items are at the bottom, do not move them anymore. Ready everything to be pushed up.
                 tmrUpDown.Enabled = False
                 txtUpDown.Text = "0"
                 cmdUpDown.Text = "Up"
-
+                'Reset Vote
                 txtVote1.Text = "0"
                 txtVote2.Text = "0"
                 txtVote3.Text = "0"
                 txtTotalVotes.Text = "0"
 
             Else
-                'move everything down
-                picWeapon1.Top = picWeapon1.Top + 1
-                picWeapon2.Top = picWeapon2.Top + 1
-                picWeapon3.Top = picWeapon3.Top + 1
-                lblWeaponName1.Top = lblWeaponName1.Top + 1
-                lblWeaponName2.Top = lblWeaponName2.Top + 1
-                lblWeaponName3.Top = lblWeaponName3.Top + 1
+                'Move all items down by 1 pixel
+                picHero1.Top = picHero1.Top + 1
+                picHero2.Top = picHero2.Top + 1
+                picHero3.Top = picHero3.Top + 1
+                lblHeroName1.Top = lblHeroName1.Top + 1
+                lblHeroName2.Top = lblHeroName2.Top + 1
+                lblHeroName3.Top = lblHeroName3.Top + 1
                 barVote1.Top = barVote1.Top + 1
                 barVote2.Top = barVote2.Top + 1
                 barVote3.Top = barVote3.Top + 1
                 picSwapPlate.Top = picSwapPlate.Top + 1
-
+                'Mark the timer up by 1 (until it reaches 125)
                 txtUpDown.Text = txtUpDown.Text + 1
             End If
 
@@ -111,11 +118,13 @@
     End Sub
 
     Private Sub cmdUpDown_Click(sender As Object, e As EventArgs) Handles cmdUpDown.Click
+        'Turn on the motion for voting options
         tmrUpDown.Enabled = True
     End Sub
 
     Private Sub cmdRandomHeroes_Click(sender As Object, e As EventArgs) Handles cmdRandomHeroes.Click
 
+        'Select 3 Ramdom Heroes for a poll. Do not include the last played hero
 Start:
         Randomize()
         txtRandomHero1.Text = Int((21 * Rnd()) + 1)
@@ -135,215 +144,217 @@ Start:
             GoTo Start
         End If
 
+        'Based on number, place Hero Image and Name into picHero and lblHeroName for all 3 Heroes
         Select Case txtRandomHero1.Text
             Case 1
-                picWeapon1.Image = pic76.Image
-                lblWeaponName1.Text = "Soldier 76"
+                picHero1.Image = pic76.Image
+                lblHeroName1.Text = "Soldier 76"
             Case 2
-                picWeapon1.Image = picBastion.Image
-                lblWeaponName1.Text = "Bastion"
+                picHero1.Image = picBastion.Image
+                lblHeroName1.Text = "Bastion"
             Case 3
-                picWeapon1.Image = picDVa.Image
-                lblWeaponName1.Text = "D.Va"
+                picHero1.Image = picDVa.Image
+                lblHeroName1.Text = "D.Va"
             Case 4
-                picWeapon1.Image = picGenji.Image
-                lblWeaponName1.Text = "Genji"
+                picHero1.Image = picGenji.Image
+                lblHeroName1.Text = "Genji"
             Case 5
-                picWeapon1.Image = picHanzo.Image
-                lblWeaponName1.Text = "Hanzo"
+                picHero1.Image = picHanzo.Image
+                lblHeroName1.Text = "Hanzo"
             Case 6
-                picWeapon1.Image = picJunkrat.Image
-                lblWeaponName1.Text = "Junkrat"
+                picHero1.Image = picJunkrat.Image
+                lblHeroName1.Text = "Junkrat"
             Case 7
-                picWeapon1.Image = picLucio.Image
-                lblWeaponName1.Text = "Lucio"
+                picHero1.Image = picLucio.Image
+                lblHeroName1.Text = "Lucio"
             Case 8
-                picWeapon1.Image = picMcCree.Image
-                lblWeaponName1.Text = "McCree"
+                picHero1.Image = picMcCree.Image
+                lblHeroName1.Text = "McCree"
             Case 9
-                picWeapon1.Image = picMei.Image
-                lblWeaponName1.Text = "Mei"
+                picHero1.Image = picMei.Image
+                lblHeroName1.Text = "Mei"
             Case 10
-                picWeapon1.Image = picMercy.Image
-                lblWeaponName1.Text = "Mercy"
+                picHero1.Image = picMercy.Image
+                lblHeroName1.Text = "Mercy"
             Case 11
-                picWeapon1.Image = picPharah.Image
-                lblWeaponName1.Text = "Pharah"
+                picHero1.Image = picPharah.Image
+                lblHeroName1.Text = "Pharah"
             Case 12
-                picWeapon1.Image = picReaper.Image
-                lblWeaponName1.Text = "Reaper"
+                picHero1.Image = picReaper.Image
+                lblHeroName1.Text = "Reaper"
             Case 13
-                picWeapon1.Image = picReinhardt.Image
-                lblWeaponName1.Text = "Reinhardt"
+                picHero1.Image = picReinhardt.Image
+                lblHeroName1.Text = "Reinhardt"
             Case 14
-                picWeapon1.Image = picRoadhog.Image
-                lblWeaponName1.Text = "Roadhog"
+                picHero1.Image = picRoadhog.Image
+                lblHeroName1.Text = "Roadhog"
             Case 15
-                picWeapon1.Image = picSymmetra.Image
-                lblWeaponName1.Text = "Symmetra"
+                picHero1.Image = picSymmetra.Image
+                lblHeroName1.Text = "Symmetra"
             Case 16
-                picWeapon1.Image = picTorbjorn.Image
-                lblWeaponName1.Text = "Torbjorn"
+                picHero1.Image = picTorbjorn.Image
+                lblHeroName1.Text = "Torbjorn"
             Case 17
-                picWeapon1.Image = picTracer.Image
-                lblWeaponName1.Text = "Tracer"
+                picHero1.Image = picTracer.Image
+                lblHeroName1.Text = "Tracer"
             Case 18
-                picWeapon1.Image = picWidowmaker.Image
-                lblWeaponName1.Text = "Widowmakr"
+                picHero1.Image = picWidowmaker.Image
+                lblHeroName1.Text = "Widowmakr"
             Case 19
-                picWeapon1.Image = picWinston.Image
-                lblWeaponName1.Text = "Winston"
+                picHero1.Image = picWinston.Image
+                lblHeroName1.Text = "Winston"
             Case 20
-                picWeapon1.Image = picZarya.Image
-                lblWeaponName1.Text = "Zarya"
+                picHero1.Image = picZarya.Image
+                lblHeroName1.Text = "Zarya"
             Case 21
-                picWeapon1.Image = picZenyatta.Image
-                lblWeaponName1.Text = "Zenyatta"
+                picHero1.Image = picZenyatta.Image
+                lblHeroName1.Text = "Zenyatta"
         End Select
 
         Select Case txtRandomHero2.Text
             Case 1
-                picWeapon2.Image = pic76.Image
-                lblWeaponName2.Text = "Soldier 76"
+                picHero2.Image = pic76.Image
+                lblHeroName2.Text = "Soldier 76"
             Case 2
-                picWeapon2.Image = picBastion.Image
-                lblWeaponName2.Text = "Bastion"
+                picHero2.Image = picBastion.Image
+                lblHeroName2.Text = "Bastion"
             Case 3
-                picWeapon2.Image = picDVa.Image
-                lblWeaponName2.Text = "D.Va"
+                picHero2.Image = picDVa.Image
+                lblHeroName2.Text = "D.Va"
             Case 4
-                picWeapon2.Image = picGenji.Image
-                lblWeaponName2.Text = "Genji"
+                picHero2.Image = picGenji.Image
+                lblHeroName2.Text = "Genji"
             Case 5
-                picWeapon2.Image = picHanzo.Image
-                lblWeaponName2.Text = "Hanzo"
+                picHero2.Image = picHanzo.Image
+                lblHeroName2.Text = "Hanzo"
             Case 6
-                picWeapon2.Image = picJunkrat.Image
-                lblWeaponName2.Text = "Junkrat"
+                picHero2.Image = picJunkrat.Image
+                lblHeroName2.Text = "Junkrat"
             Case 7
-                picWeapon2.Image = picLucio.Image
-                lblWeaponName2.Text = "Lucio"
+                picHero2.Image = picLucio.Image
+                lblHeroName2.Text = "Lucio"
             Case 8
-                picWeapon2.Image = picMcCree.Image
-                lblWeaponName2.Text = "McCree"
+                picHero2.Image = picMcCree.Image
+                lblHeroName2.Text = "McCree"
             Case 9
-                picWeapon2.Image = picMei.Image
-                lblWeaponName2.Text = "Mei"
+                picHero2.Image = picMei.Image
+                lblHeroName2.Text = "Mei"
             Case 10
-                picWeapon2.Image = picMercy.Image
-                lblWeaponName2.Text = "Mercy"
+                picHero2.Image = picMercy.Image
+                lblHeroName2.Text = "Mercy"
             Case 11
-                picWeapon2.Image = picPharah.Image
-                lblWeaponName2.Text = "Pharah"
+                picHero2.Image = picPharah.Image
+                lblHeroName2.Text = "Pharah"
             Case 12
-                picWeapon2.Image = picReaper.Image
-                lblWeaponName2.Text = "Reaper"
+                picHero2.Image = picReaper.Image
+                lblHeroName2.Text = "Reaper"
             Case 13
-                picWeapon2.Image = picReinhardt.Image
-                lblWeaponName2.Text = "Reinhardt"
+                picHero2.Image = picReinhardt.Image
+                lblHeroName2.Text = "Reinhardt"
             Case 14
-                picWeapon2.Image = picRoadhog.Image
-                lblWeaponName2.Text = "Roadhog"
+                picHero2.Image = picRoadhog.Image
+                lblHeroName2.Text = "Roadhog"
             Case 15
-                picWeapon2.Image = picSymmetra.Image
-                lblWeaponName2.Text = "Symmetra"
+                picHero2.Image = picSymmetra.Image
+                lblHeroName2.Text = "Symmetra"
             Case 16
-                picWeapon2.Image = picTorbjorn.Image
-                lblWeaponName2.Text = "Torbjorn"
+                picHero2.Image = picTorbjorn.Image
+                lblHeroName2.Text = "Torbjorn"
             Case 17
-                picWeapon2.Image = picTracer.Image
-                lblWeaponName2.Text = "Tracer"
+                picHero2.Image = picTracer.Image
+                lblHeroName2.Text = "Tracer"
             Case 18
-                picWeapon2.Image = picWidowmaker.Image
-                lblWeaponName2.Text = "Widowmakr"
+                picHero2.Image = picWidowmaker.Image
+                lblHeroName2.Text = "Widowmakr"
             Case 19
-                picWeapon2.Image = picWinston.Image
-                lblWeaponName2.Text = "Winston"
+                picHero2.Image = picWinston.Image
+                lblHeroName2.Text = "Winston"
             Case 20
-                picWeapon2.Image = picZarya.Image
-                lblWeaponName2.Text = "Zarya"
+                picHero2.Image = picZarya.Image
+                lblHeroName2.Text = "Zarya"
             Case 21
-                picWeapon2.Image = picZenyatta.Image
-                lblWeaponName2.Text = "Zenyatta"
+                picHero2.Image = picZenyatta.Image
+                lblHeroName2.Text = "Zenyatta"
         End Select
 
         Select Case txtRandomHero3.Text
             Case 1
-                picWeapon3.Image = pic76.Image
-                lblWeaponName3.Text = "Soldier 76"
+                picHero3.Image = pic76.Image
+                lblHeroName3.Text = "Soldier 76"
             Case 2
-                picWeapon3.Image = picBastion.Image
-                lblWeaponName3.Text = "Bastion"
+                picHero3.Image = picBastion.Image
+                lblHeroName3.Text = "Bastion"
             Case 3
-                picWeapon3.Image = picDVa.Image
-                lblWeaponName3.Text = "D.Va"
+                picHero3.Image = picDVa.Image
+                lblHeroName3.Text = "D.Va"
             Case 4
-                picWeapon3.Image = picGenji.Image
-                lblWeaponName3.Text = "Genji"
+                picHero3.Image = picGenji.Image
+                lblHeroName3.Text = "Genji"
             Case 5
-                picWeapon3.Image = picHanzo.Image
-                lblWeaponName3.Text = "Hanzo"
+                picHero3.Image = picHanzo.Image
+                lblHeroName3.Text = "Hanzo"
             Case 6
-                picWeapon3.Image = picJunkrat.Image
-                lblWeaponName3.Text = "Junkrat"
+                picHero3.Image = picJunkrat.Image
+                lblHeroName3.Text = "Junkrat"
             Case 7
-                picWeapon3.Image = picLucio.Image
-                lblWeaponName3.Text = "Lucio"
+                picHero3.Image = picLucio.Image
+                lblHeroName3.Text = "Lucio"
             Case 8
-                picWeapon3.Image = picMcCree.Image
-                lblWeaponName3.Text = "McCree"
+                picHero3.Image = picMcCree.Image
+                lblHeroName3.Text = "McCree"
             Case 9
-                picWeapon3.Image = picMei.Image
-                lblWeaponName3.Text = "Mei"
+                picHero3.Image = picMei.Image
+                lblHeroName3.Text = "Mei"
             Case 10
-                picWeapon3.Image = picMercy.Image
-                lblWeaponName3.Text = "Mercy"
+                picHero3.Image = picMercy.Image
+                lblHeroName3.Text = "Mercy"
             Case 11
-                picWeapon3.Image = picPharah.Image
-                lblWeaponName3.Text = "Pharah"
+                picHero3.Image = picPharah.Image
+                lblHeroName3.Text = "Pharah"
             Case 12
-                picWeapon3.Image = picReaper.Image
-                lblWeaponName3.Text = "Reaper"
+                picHero3.Image = picReaper.Image
+                lblHeroName3.Text = "Reaper"
             Case 13
-                picWeapon3.Image = picReinhardt.Image
-                lblWeaponName3.Text = "Reinhardt"
+                picHero3.Image = picReinhardt.Image
+                lblHeroName3.Text = "Reinhardt"
             Case 14
-                picWeapon3.Image = picRoadhog.Image
-                lblWeaponName3.Text = "Roadhog"
+                picHero3.Image = picRoadhog.Image
+                lblHeroName3.Text = "Roadhog"
             Case 15
-                picWeapon3.Image = picSymmetra.Image
-                lblWeaponName3.Text = "Symmetra"
+                picHero3.Image = picSymmetra.Image
+                lblHeroName3.Text = "Symmetra"
             Case 16
-                picWeapon3.Image = picTorbjorn.Image
-                lblWeaponName3.Text = "Torbjorn"
+                picHero3.Image = picTorbjorn.Image
+                lblHeroName3.Text = "Torbjorn"
             Case 17
-                picWeapon3.Image = picTracer.Image
-                lblWeaponName3.Text = "Tracer"
+                picHero3.Image = picTracer.Image
+                lblHeroName3.Text = "Tracer"
             Case 18
-                picWeapon3.Image = picWidowmaker.Image
-                lblWeaponName3.Text = "Widowmakr"
+                picHero3.Image = picWidowmaker.Image
+                lblHeroName3.Text = "Widowmakr"
             Case 19
-                picWeapon3.Image = picWinston.Image
-                lblWeaponName3.Text = "Winston"
+                picHero3.Image = picWinston.Image
+                lblHeroName3.Text = "Winston"
             Case 20
-                picWeapon3.Image = picZarya.Image
-                lblWeaponName3.Text = "Zarya"
+                picHero3.Image = picZarya.Image
+                lblHeroName3.Text = "Zarya"
             Case 21
-                picWeapon3.Image = picZenyatta.Image
-                lblWeaponName3.Text = "Zenyatta"
+                picHero3.Image = picZenyatta.Image
+                lblHeroName3.Text = "Zenyatta"
         End Select
 
     End Sub
 
     Private Sub cmdStartVote_Click(sender As Object, e As EventArgs) Handles cmdStartVote.Click
-        tmrVote.Enabled = True
-        cmdRandomHeroes.PerformClick()
-        cmdUpDown.PerformClick()
+        tmrVote.Enabled = True 'Vote only lasts during this duration
+        cmdRandomHeroes.PerformClick() 'Mix up all heroes
+        cmdUpDown.PerformClick() 'Move up all voting options into visible field
     End Sub
 
     Private Sub tmrVote_Tick(sender As Object, e As EventArgs) Handles tmrVote.Tick
         If txtVoteCountdown.Text = 0 Then
-
+            'Vote is over. Declair winner
+            'Check who had the most votes. Move that to txtLastHero.text
             If txtVote1.Text >= txtVote2.Text Then
                 If txtVote1.Text >= txtVote3.Text Then
                     txtLastHero.Text = txtRandomHero1.Text
@@ -357,65 +368,69 @@ Start:
                     txtLastHero.Text = txtRandomHero3.Text
                 End If
             End If
-
-            cmdUpDown.PerformClick()
-            txtVoteCountdown.Text = "30"
-            tmrVote.Enabled = False
+            cmdUpDown.PerformClick() 'send all voting options down
+            txtVoteCountdown.Text = "30" 'reset voting countdown timer
+            tmrVote.Enabled = False 'stop counting down
+            tmrReticleCheck.Enabled = True 'start checking for death again
         Else
-            txtVoteCountdown.Text = txtVoteCountdown.Text - 1
+            txtVoteCountdown.Text = txtVoteCountdown.Text - 1 'countdown from timer by 1
         End If
     End Sub
 
     Private Sub cmdSwitchHeroes_Click(sender As Object, e As EventArgs) Handles cmdSwitchHeroes.Click
-        If txtLastHero.Text = "1" Then
-            SendKeys.Send("{F24}")
-        ElseIf txtLastHero.Text = "2" Then
-            SendKeys.Send("{F23}")
-        ElseIf txtLastHero.Text = "3" Then
-            SendKeys.Send("{F22}")
-        ElseIf txtLastHero.Text = "4" Then
-            SendKeys.Send("{F21}")
-        ElseIf txtLastHero.Text = "5" Then
-            SendKeys.Send("{F20}")
-        ElseIf txtLastHero.Text = "6" Then
-            SendKeys.Send("{F19}")
-        ElseIf txtLastHero.Text = "7" Then
-            SendKeys.Send("{F18}")
-        ElseIf txtLastHero.Text = "8" Then
-            SendKeys.Send("{F17}")
-        ElseIf txtLastHero.Text = "9" Then
-            SendKeys.Send("{F16}")
-        ElseIf txtLastHero.Text = "10" Then
-            SendKeys.Send("{F15}")
-        ElseIf txtLastHero.Text = "11" Then
-            SendKeys.Send("{F14}")
-        ElseIf txtLastHero.Text = "12" Then
-            SendKeys.Send("{F13}")
-        ElseIf txtLastHero.Text = "13" Then
-            SendKeys.Send("{F12}")
-        ElseIf txtLastHero.Text = "14" Then
-            SendKeys.Send("{F11}")
-        ElseIf txtLastHero.Text = "15" Then
-            SendKeys.Send("{F10}")
-        ElseIf txtLastHero.Text = "16" Then
-            SendKeys.Send("{F9}")
-        ElseIf txtLastHero.Text = "17" Then
-            SendKeys.Send("{F8}")
-        ElseIf txtLastHero.Text = "18" Then
-            SendKeys.Send("{F7}")
-        ElseIf txtLastHero.Text = "19" Then
-            SendKeys.Send("{F6}")
-        ElseIf txtLastHero.Text = "20" Then
-            SendKeys.Send("{F5}")
-        ElseIf txtLastHero.Text = "21" Then
-            SendKeys.Send("{F4}")
-        End If
+        'AutoHotKey Macros to switch heros in game - to be used on death screen
+        'Checks what Hero was last voted for (txtLastHero.text)
+        Select Case txtLastHero.Text
+            Case 1
+                SendKeys.Send("{F24}")
+            Case 2
+                SendKeys.Send("{F23}")
+            Case 3
+                SendKeys.Send("{F22}")
+            Case 4
+                SendKeys.Send("{F21}")
+            Case 5
+                SendKeys.Send("{F20}")
+            Case 6
+                SendKeys.Send("{F19}")
+            Case 7
+                SendKeys.Send("{F18}")
+            Case 8
+                SendKeys.Send("{F17}")
+            Case 9
+                SendKeys.Send("{F16}")
+            Case 10
+                SendKeys.Send("{F15}")
+            Case 11
+                SendKeys.Send("{F14}")
+            Case 12
+                SendKeys.Send("{F13}")
+            Case 13
+                SendKeys.Send("{F12}")
+            Case 14
+                SendKeys.Send("{F11}")
+            Case 15
+                SendKeys.Send("{F10}")
+            Case 16
+                SendKeys.Send("{F9}")
+            Case 17
+                SendKeys.Send("{F8}")
+            Case 18
+                SendKeys.Send("{F7}")
+            Case 19
+                SendKeys.Send("{F6}")
+            Case 20
+                SendKeys.Send("{F5}")
+            Case 21
+                SendKeys.Send("{F4}")
+        End Select
 
-        cmdStartVote.PerformClick()
+
 
     End Sub
 
     Private Sub tmrReticleCheck_Tick(sender As Object, e As EventArgs) Handles tmrReticleCheck.Tick
+        'Checking 1 pixel at the center of the right screen
         Dim a As New Drawing.Bitmap(1, 1)
         Dim b As System.Drawing.Graphics = System.Drawing.Graphics.FromImage(a)
         b.CopyFromScreen(New Drawing.Point(2880, 540), New Drawing.Point(0, 0), a.Size)
@@ -423,48 +438,91 @@ Start:
         picReticleColor.BackColor = c
         txtReticleColor.Text = picReticleColor.BackColor.Name
 
-
+        'All presumptions on the characters dead/alive status are founded on the presence or absence of the reticle being visible
         If txtReticleColor.Text = "ff00ff00" Then
-            'alive
             If txtPlayerStatus.Text = "Alive" Then
+                'NOTHING
             Else
-                'wait 5 seconds
-                tmrDelayVote.Enabled = True
+                'Just spawned- Run spawn check
+                tmrSpawnCheck.Enabled = True
+                tmrReticleCheck.Enabled = False
             End If
 
         Else
-            'dead
             If txtPlayerStatus.Text = "Dead" Then
+                'NOTHING
             Else
-                'wait 5 seconds
-                tmrDelayHeroSwitch.Enabled = True
+                'Just died- Run death check
+                tmrDeathCheck.Enabled = True
+                tmrReticleCheck.Enabled = False
             End If
-
-        End If
-
-    End Sub
-
-
-
-    Private Sub tmrDelayHeroSwitch_Tick(sender As Object, e As EventArgs) Handles tmrDelayHeroSwitch.Tick
-        If txtDelayHeroSwitch.Text > 5 Then
-            cmdSwitchHeroes.PerformClick()
-            tmrDelayHeroSwitch.Enabled = False
-            txtDelayHeroSwitch.Text = "0"
-            txtPlayerStatus.Text = "Alive"
-        Else
-            txtDelayHeroSwitch.Text = txtDelayHeroSwitch.Text + 1
         End If
     End Sub
 
-    Private Sub tmrDelayVote_Tick(sender As Object, e As EventArgs) Handles tmrDelayVote.Tick
-        If txtDelayVote.Text > 5 Then
+    Private Sub tmrSpawnCheck_Tick(sender As Object, e As EventArgs) Handles tmrSpawnCheck.Tick
+        'Checking 1 pixel at the center of the right screen
+        Dim a As New Drawing.Bitmap(1, 1)
+        Dim b As System.Drawing.Graphics = System.Drawing.Graphics.FromImage(a)
+        b.CopyFromScreen(New Drawing.Point(2880, 540), New Drawing.Point(0, 0), a.Size)
+        Dim c As Drawing.Color = a.GetPixel(0, 0)
+        picReticleColor.BackColor = c
+        txtReticleColor.Text = picReticleColor.BackColor.Name
+
+        If txtCheckYes.Text = 100 Then
+            'Hero did respawn. Start the new vote & reset.
             cmdStartVote.PerformClick()
-            tmrDelayVote.Enabled = False
-            txtDelayVote.Text = "0"
-            txtPlayerStatus.Text = "Dead"
+            tmrSpawnCheck.Enabled = False
+            txtCheckNo.Text = "100"
+            txtCheckYes.Text = "0"
+            txtPlayerStatus.Text = "Alive"
+        ElseIf txtCheckNo.Text = 0 Then
+            'false positive. Hero did not respawn. Reset & Keep waiting.
+            tmrSpawnCheck.Enabled = False
+            txtCheckNo.Text = "100"
+            txtCheckYes.Text = "0"
+            tmrReticleCheck.Enabled = True
         Else
-            txtDelayHeroSwitch.Text = txtDelayHeroSwitch.Text + 1
+            'expecting to see green. If we dont, return No
+            If txtReticleColor.Text = "ff00ff00" Then
+                txtCheckYes.Text = txtCheckYes.Text + 1
+            Else
+                txtCheckNo.Text = txtCheckNo.Text - 1
+            End If
         End If
     End Sub
+
+    Private Sub tmrDeathCheck_Tick(sender As Object, e As EventArgs) Handles tmrDeathCheck.Tick
+        'Checking 1 pixel at the center of the right screen
+        Dim a As New Drawing.Bitmap(1, 1)
+        Dim b As System.Drawing.Graphics = System.Drawing.Graphics.FromImage(a)
+        b.CopyFromScreen(New Drawing.Point(2880, 540), New Drawing.Point(0, 0), a.Size)
+        Dim c As Drawing.Color = a.GetPixel(0, 0)
+        picReticleColor.BackColor = c
+        txtReticleColor.Text = picReticleColor.BackColor.Name
+
+        If txtCheckYes.Text = 100 Then
+            'Hero did die. Switch Heroes
+            cmdSwitchHeroes.PerformClick()
+            tmrDeathCheck.Enabled = False
+            txtCheckNo.Text = "100"
+            txtCheckYes.Text = "0"
+            txtPlayerStatus.Text = "Dead"
+            tmrReticleCheck.Enabled = True
+        ElseIf txtCheckNo.Text = 0 Then
+            'false positive. Hero did not die. Reset & Keep waiting.
+            tmrDeathCheck.Enabled = False
+            txtCheckNo.Text = "100"
+            txtCheckYes.Text = "0"
+            tmrReticleCheck.Enabled = True
+        Else
+            'expecting to see NO green. If we do, return No
+            If txtReticleColor.Text = "ff00ff00" Then
+                txtCheckNo.Text = txtCheckNo.Text - 1
+            Else
+                txtCheckYes.Text = txtCheckYes.Text + 1
+            End If
+        End If
+    End Sub
+
+
 End Class

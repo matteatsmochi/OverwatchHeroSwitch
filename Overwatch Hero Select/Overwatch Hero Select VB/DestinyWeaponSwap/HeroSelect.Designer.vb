@@ -24,16 +24,16 @@ Partial Class frmOverwatchHeroSelect
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOverwatchHeroSelect))
-        Me.picWeapon1 = New System.Windows.Forms.PictureBox()
-        Me.picWeapon2 = New System.Windows.Forms.PictureBox()
-        Me.picWeapon3 = New System.Windows.Forms.PictureBox()
+        Me.picHero1 = New System.Windows.Forms.PictureBox()
+        Me.picHero2 = New System.Windows.Forms.PictureBox()
+        Me.picHero3 = New System.Windows.Forms.PictureBox()
         Me.picSwapPlate = New System.Windows.Forms.PictureBox()
         Me.barVote3 = New System.Windows.Forms.PictureBox()
         Me.barVote2 = New System.Windows.Forms.PictureBox()
         Me.barVote1 = New System.Windows.Forms.PictureBox()
-        Me.lblWeaponName1 = New System.Windows.Forms.Label()
-        Me.lblWeaponName2 = New System.Windows.Forms.Label()
-        Me.lblWeaponName3 = New System.Windows.Forms.Label()
+        Me.lblHeroName1 = New System.Windows.Forms.Label()
+        Me.lblHeroName2 = New System.Windows.Forms.Label()
+        Me.lblHeroName3 = New System.Windows.Forms.Label()
         Me.cmdVote1 = New System.Windows.Forms.Button()
         Me.txtVote1 = New System.Windows.Forms.TextBox()
         Me.txtVote2 = New System.Windows.Forms.TextBox()
@@ -80,14 +80,14 @@ Partial Class frmOverwatchHeroSelect
         Me.tmrReticleCheck = New System.Windows.Forms.Timer(Me.components)
         Me.txtReticleColor = New System.Windows.Forms.TextBox()
         Me.picReticleColor = New System.Windows.Forms.PictureBox()
-        Me.tmrDelayHeroSwitch = New System.Windows.Forms.Timer(Me.components)
         Me.txtPlayerStatus = New System.Windows.Forms.TextBox()
-        Me.txtDelayHeroSwitch = New System.Windows.Forms.TextBox()
-        Me.txtDelayVote = New System.Windows.Forms.TextBox()
-        Me.tmrDelayVote = New System.Windows.Forms.Timer(Me.components)
-        CType(Me.picWeapon1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picWeapon2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picWeapon3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.txtCheckYes = New System.Windows.Forms.TextBox()
+        Me.txtCheckNo = New System.Windows.Forms.TextBox()
+        Me.tmrSpawnCheck = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrDeathCheck = New System.Windows.Forms.Timer(Me.components)
+        CType(Me.picHero1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picHero2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picHero3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picSwapPlate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.barVote3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.barVote2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,23 +119,23 @@ Partial Class frmOverwatchHeroSelect
         CType(Me.picReticleColor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'picWeapon1
+        'picHero1
         '
-        resources.ApplyResources(Me.picWeapon1, "picWeapon1")
-        Me.picWeapon1.Name = "picWeapon1"
-        Me.picWeapon1.TabStop = False
+        resources.ApplyResources(Me.picHero1, "picHero1")
+        Me.picHero1.Name = "picHero1"
+        Me.picHero1.TabStop = False
         '
-        'picWeapon2
+        'picHero2
         '
-        resources.ApplyResources(Me.picWeapon2, "picWeapon2")
-        Me.picWeapon2.Name = "picWeapon2"
-        Me.picWeapon2.TabStop = False
+        resources.ApplyResources(Me.picHero2, "picHero2")
+        Me.picHero2.Name = "picHero2"
+        Me.picHero2.TabStop = False
         '
-        'picWeapon3
+        'picHero3
         '
-        resources.ApplyResources(Me.picWeapon3, "picWeapon3")
-        Me.picWeapon3.Name = "picWeapon3"
-        Me.picWeapon3.TabStop = False
+        resources.ApplyResources(Me.picHero3, "picHero3")
+        Me.picHero3.Name = "picHero3"
+        Me.picHero3.TabStop = False
         '
         'picSwapPlate
         '
@@ -164,26 +164,26 @@ Partial Class frmOverwatchHeroSelect
         Me.barVote1.Name = "barVote1"
         Me.barVote1.TabStop = False
         '
-        'lblWeaponName1
+        'lblHeroName1
         '
-        Me.lblWeaponName1.BackColor = System.Drawing.Color.Black
-        resources.ApplyResources(Me.lblWeaponName1, "lblWeaponName1")
-        Me.lblWeaponName1.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.lblWeaponName1.Name = "lblWeaponName1"
+        Me.lblHeroName1.BackColor = System.Drawing.Color.Black
+        resources.ApplyResources(Me.lblHeroName1, "lblHeroName1")
+        Me.lblHeroName1.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.lblHeroName1.Name = "lblHeroName1"
         '
-        'lblWeaponName2
+        'lblHeroName2
         '
-        Me.lblWeaponName2.BackColor = System.Drawing.Color.Black
-        resources.ApplyResources(Me.lblWeaponName2, "lblWeaponName2")
-        Me.lblWeaponName2.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.lblWeaponName2.Name = "lblWeaponName2"
+        Me.lblHeroName2.BackColor = System.Drawing.Color.Black
+        resources.ApplyResources(Me.lblHeroName2, "lblHeroName2")
+        Me.lblHeroName2.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.lblHeroName2.Name = "lblHeroName2"
         '
-        'lblWeaponName3
+        'lblHeroName3
         '
-        Me.lblWeaponName3.BackColor = System.Drawing.Color.Black
-        resources.ApplyResources(Me.lblWeaponName3, "lblWeaponName3")
-        Me.lblWeaponName3.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.lblWeaponName3.Name = "lblWeaponName3"
+        Me.lblHeroName3.BackColor = System.Drawing.Color.Black
+        resources.ApplyResources(Me.lblHeroName3, "lblHeroName3")
+        Me.lblHeroName3.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.lblHeroName3.Name = "lblHeroName3"
         '
         'cmdVote1
         '
@@ -444,36 +444,36 @@ Partial Class frmOverwatchHeroSelect
         Me.picReticleColor.Name = "picReticleColor"
         Me.picReticleColor.TabStop = False
         '
-        'tmrDelayHeroSwitch
-        '
-        Me.tmrDelayHeroSwitch.Interval = 1000
-        '
         'txtPlayerStatus
         '
         resources.ApplyResources(Me.txtPlayerStatus, "txtPlayerStatus")
         Me.txtPlayerStatus.Name = "txtPlayerStatus"
         '
-        'txtDelayHeroSwitch
+        'txtCheckYes
         '
-        resources.ApplyResources(Me.txtDelayHeroSwitch, "txtDelayHeroSwitch")
-        Me.txtDelayHeroSwitch.Name = "txtDelayHeroSwitch"
+        resources.ApplyResources(Me.txtCheckYes, "txtCheckYes")
+        Me.txtCheckYes.Name = "txtCheckYes"
         '
-        'txtDelayVote
+        'txtCheckNo
         '
-        resources.ApplyResources(Me.txtDelayVote, "txtDelayVote")
-        Me.txtDelayVote.Name = "txtDelayVote"
+        resources.ApplyResources(Me.txtCheckNo, "txtCheckNo")
+        Me.txtCheckNo.Name = "txtCheckNo"
         '
-        'tmrDelayVote
+        'tmrSpawnCheck
         '
-        Me.tmrDelayVote.Interval = 1000
+        Me.tmrSpawnCheck.Interval = 10
+        '
+        'tmrDeathCheck
+        '
+        Me.tmrDeathCheck.Interval = 10
         '
         'frmOverwatchHeroSelect
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Lime
-        Me.Controls.Add(Me.txtDelayVote)
-        Me.Controls.Add(Me.txtDelayHeroSwitch)
+        Me.Controls.Add(Me.txtCheckNo)
+        Me.Controls.Add(Me.txtCheckYes)
         Me.Controls.Add(Me.txtPlayerStatus)
         Me.Controls.Add(Me.picReticleColor)
         Me.Controls.Add(Me.txtReticleColor)
@@ -518,20 +518,20 @@ Partial Class frmOverwatchHeroSelect
         Me.Controls.Add(Me.cmdVote2)
         Me.Controls.Add(Me.txtVote1)
         Me.Controls.Add(Me.cmdVote1)
-        Me.Controls.Add(Me.lblWeaponName3)
-        Me.Controls.Add(Me.lblWeaponName2)
-        Me.Controls.Add(Me.lblWeaponName1)
+        Me.Controls.Add(Me.lblHeroName3)
+        Me.Controls.Add(Me.lblHeroName2)
+        Me.Controls.Add(Me.lblHeroName1)
         Me.Controls.Add(Me.barVote1)
         Me.Controls.Add(Me.barVote2)
         Me.Controls.Add(Me.barVote3)
-        Me.Controls.Add(Me.picWeapon3)
-        Me.Controls.Add(Me.picWeapon2)
-        Me.Controls.Add(Me.picWeapon1)
+        Me.Controls.Add(Me.picHero3)
+        Me.Controls.Add(Me.picHero2)
+        Me.Controls.Add(Me.picHero1)
         Me.Controls.Add(Me.picSwapPlate)
         Me.Name = "frmOverwatchHeroSelect"
-        CType(Me.picWeapon1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picWeapon2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picWeapon3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picHero1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picHero2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picHero3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picSwapPlate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.barVote3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.barVote2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -566,16 +566,16 @@ Partial Class frmOverwatchHeroSelect
 
     End Sub
 
-    Friend WithEvents picWeapon1 As PictureBox
-    Friend WithEvents picWeapon2 As PictureBox
-    Friend WithEvents picWeapon3 As PictureBox
+    Friend WithEvents picHero1 As PictureBox
+    Friend WithEvents picHero2 As PictureBox
+    Friend WithEvents picHero3 As PictureBox
     Friend WithEvents picSwapPlate As PictureBox
     Friend WithEvents barVote3 As PictureBox
     Friend WithEvents barVote2 As PictureBox
     Friend WithEvents barVote1 As PictureBox
-    Friend WithEvents lblWeaponName1 As Label
-    Friend WithEvents lblWeaponName2 As Label
-    Friend WithEvents lblWeaponName3 As Label
+    Friend WithEvents lblHeroName1 As Label
+    Friend WithEvents lblHeroName2 As Label
+    Friend WithEvents lblHeroName3 As Label
     Friend WithEvents cmdVote1 As Button
     Friend WithEvents txtVote1 As TextBox
     Friend WithEvents txtVote2 As TextBox
@@ -622,9 +622,9 @@ Partial Class frmOverwatchHeroSelect
     Friend WithEvents tmrReticleCheck As Timer
     Friend WithEvents txtReticleColor As TextBox
     Friend WithEvents picReticleColor As PictureBox
-    Friend WithEvents tmrDelayHeroSwitch As Timer
     Friend WithEvents txtPlayerStatus As TextBox
-    Friend WithEvents txtDelayHeroSwitch As TextBox
-    Friend WithEvents txtDelayVote As TextBox
-    Friend WithEvents tmrDelayVote As Timer
+    Friend WithEvents txtCheckYes As TextBox
+    Friend WithEvents txtCheckNo As TextBox
+    Friend WithEvents tmrSpawnCheck As Timer
+    Friend WithEvents tmrDeathCheck As Timer
 End Class
