@@ -378,53 +378,49 @@ Start:
     End Sub
 
     Private Sub cmdSwitchHeroes_Click(sender As Object, e As EventArgs) Handles cmdSwitchHeroes.Click
-        'AutoHotKey Macros to switch heros in game - to be used on death screen
-        'Checks what Hero was last voted for (txtLastHero.text)
-        Select Case txtLastHero.Text
-            Case 1
-                SendKeys.Send("{F24}")
-            Case 2
-                SendKeys.Send("{F23}")
-            Case 3
-                SendKeys.Send("{F22}")
-            Case 4
-                SendKeys.Send("{F21}")
-            Case 5
-                SendKeys.Send("{F20}")
-            Case 6
-                SendKeys.Send("{F19}")
-            Case 7
-                SendKeys.Send("{F18}")
-            Case 8
-                SendKeys.Send("{F17}")
-            Case 9
-                SendKeys.Send("{F16}")
-            Case 10
-                SendKeys.Send("{F15}")
-            Case 11
-                SendKeys.Send("{F14}")
-            Case 12
-                SendKeys.Send("{F13}")
-            Case 13
-                SendKeys.Send("{F12}")
-            Case 14
-                SendKeys.Send("{F11}")
-            Case 15
-                SendKeys.Send("{F10}")
-            Case 16
-                SendKeys.Send("{F9}")
-            Case 17
-                SendKeys.Send("{F8}")
-            Case 18
-                SendKeys.Send("{F7}")
-            Case 19
-                SendKeys.Send("{F6}")
-            Case 20
-                SendKeys.Send("{F5}")
-            Case 21
-                SendKeys.Send("{F4}")
-        End Select
-
+        If txtLastHero.Text = "1" Then
+            SendKeys.Send("{F24}")
+        ElseIf txtLastHero.Text = "2" Then
+            SendKeys.Send("{F23}")
+        ElseIf txtLastHero.Text = "3" Then
+            SendKeys.Send("{F22}")
+        ElseIf txtLastHero.Text = "4" Then
+            SendKeys.Send("{F21}")
+        ElseIf txtLastHero.Text = "5" Then
+            SendKeys.Send("{F20}")
+        ElseIf txtLastHero.Text = "6" Then
+            SendKeys.Send("{F19}")
+        ElseIf txtLastHero.Text = "7" Then
+            SendKeys.Send("{F18}")
+        ElseIf txtLastHero.Text = "8" Then
+            SendKeys.Send("{F17}")
+        ElseIf txtLastHero.Text = "9" Then
+            SendKeys.Send("{F16}")
+        ElseIf txtLastHero.Text = "10" Then
+            SendKeys.Send("{F15}")
+        ElseIf txtLastHero.Text = "11" Then
+            SendKeys.Send("{F14}")
+        ElseIf txtLastHero.Text = "12" Then
+            SendKeys.Send("{F13}")
+        ElseIf txtLastHero.Text = "13" Then
+            SendKeys.Send("{F12}")
+        ElseIf txtLastHero.Text = "14" Then
+            SendKeys.Send("{F11}")
+        ElseIf txtLastHero.Text = "15" Then
+            SendKeys.Send("{F10}")
+        ElseIf txtLastHero.Text = "16" Then
+            SendKeys.Send("{F9}")
+        ElseIf txtLastHero.Text = "17" Then
+            SendKeys.Send("{F8}")
+        ElseIf txtLastHero.Text = "18" Then
+            SendKeys.Send("{F7}")
+        ElseIf txtLastHero.Text = "19" Then
+            SendKeys.Send("{F6}")
+        ElseIf txtLastHero.Text = "20" Then
+            SendKeys.Send("{F5}")
+        ElseIf txtLastHero.Text = "21" Then
+            SendKeys.Send("{F4}")
+        End If
 
 
     End Sub
